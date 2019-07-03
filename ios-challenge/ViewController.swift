@@ -19,7 +19,8 @@ class ViewController: UIViewController, StoreSubscriber {
     }
     
     func newState(state: State) {
-        let count = (store.state as? AppState)?.counter ?? 0
+        guard let state = store.state as? AppState else { return }
+        let count = state.counter
         countLabel.text = String(count)
     }
     
