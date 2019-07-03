@@ -27,9 +27,9 @@ func appReducer(_ action: Action, _ state: State?) -> State {
     
     switch action {
     case let action as IncreaseAction:
-        newState.counter -= action.increaseBy
+        newState.counter += action.increaseBy
     case let action as DecreaseAction:
-        newState.counter += action.decreaseBy
+        newState.counter -= action.decreaseBy
     default:
         break
     }
