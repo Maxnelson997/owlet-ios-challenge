@@ -36,6 +36,8 @@ class UnsplashImageController: UIViewController {
         imageView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
         
         imageView.asyncLoadImage(from: imageStringURL)
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismiss(animated:completion:))))
     }
     
  
@@ -44,6 +46,9 @@ class UnsplashImageController: UIViewController {
 
 
 extension UIImageView {
+    /**
+            asyncLoadImage - fetches an image from specified url, handles all cases appropriately.
+            */
     func asyncLoadImage(from urlString: String) {
 
         guard let url = URL(string: urlString) else {
