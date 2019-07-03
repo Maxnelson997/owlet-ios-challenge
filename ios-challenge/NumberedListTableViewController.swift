@@ -22,7 +22,6 @@ class NumberedListTableViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "numberedListedControllerCellID")
         /** If this tb were setup programmatically I would not use a delay for fetchData, instead I would fetch the data immediately and then set dataSource = self after 5 seconds. */
         perform(#selector(fetchData), with: nil, afterDelay: 1)
-        perform(#selector(reloadListOnMainThread), with: nil, afterDelay: 5)
     }
     
     // MARK: - private methods
@@ -30,9 +29,9 @@ class NumberedListTableViewController: UITableViewController {
              reloadListOnMainThread - Call this function to reload the tableView on the main thread
            */
     @objc private func reloadListOnMainThread() {
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5, execute: {
             self.tableView.reloadData()
-        }
+        })
     }
     
     // MARK: - apiService (If this weren't a code example, I would store this code within a well built, clean API layer)
@@ -52,6 +51,7 @@ class NumberedListTableViewController: UITableViewController {
             for number in 1...100 {
                 self?.listOfNumbers.append(number)
             }
+            self?.reloadListOnMainThread()
         }
     }
     
