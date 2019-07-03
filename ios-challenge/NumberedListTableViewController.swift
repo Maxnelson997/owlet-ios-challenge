@@ -48,6 +48,7 @@ class NumberedListTableViewController: UITableViewController {
     @objc private func fetchData() {
         DispatchQueue.global(qos: .userInteractive).async {
             [weak self] in
+            // weak self will prevent any strong refernce cycles.
             for number in 1...100 {
                 self?.listOfNumbers.append(number)
             }
