@@ -10,18 +10,17 @@ import UIKit
 
 class NumberedListTableViewController: UITableViewController {
     
+    //    private let serialQueue = DispatchQueue(label: "io.async.maxcodes", qos: .userInteractive, attributes: .concurrent)
+    
     private var listOfNumbers: [Int] = []
     
-    private let serialQueue = DispatchQueue(label: "io.async.maxcodes",
-                                    qos: .userInteractive,
-                                    attributes: .concurrent)
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "numberedListedControllerCellID")
         /** If this tb were setup programmatically I would not use a delay for fetchData, instead I would fetch the data immediately and then set dataSource = self after 5 seconds. */
         perform(#selector(fetchData), with: nil, afterDelay: 1)
+        print("appeared")
     }
     
     // MARK: - private methods
@@ -30,7 +29,8 @@ class NumberedListTableViewController: UITableViewController {
            */
     @objc private func reloadListOnMainThread() {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5, execute: {
-            self.tableView.reloadData()
+            [weak self] in
+            self?.tableView.reloadData()
         })
     }
     

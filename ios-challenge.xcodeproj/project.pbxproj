@@ -17,6 +17,7 @@
 		29162B3022652E3500315E82 /* SimpleRedux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29162B2F22652E3500315E82 /* SimpleRedux.swift */; };
 		29162B3222652E5500315E82 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29162B3122652E5500315E82 /* AppState.swift */; };
 		4E18BEDC22664E89002E1C7D /* NumberedListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E18BEDB22664E89002E1C7D /* NumberedListTableViewController.swift */; };
+		79C2465522CC40E10062EB1D /* UnsplashImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C2465422CC40E10062EB1D /* UnsplashImageController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		29162B2F22652E3500315E82 /* SimpleRedux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleRedux.swift; sourceTree = "<group>"; };
 		29162B3122652E5500315E82 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		4E18BEDB22664E89002E1C7D /* NumberedListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberedListTableViewController.swift; sourceTree = "<group>"; };
+		79C2465422CC40E10062EB1D /* UnsplashImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashImageController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				29162B0A22652E1C00315E82 /* LaunchScreen.storyboard */,
 				29162B0D22652E1C00315E82 /* Info.plist */,
 				4E18BEDB22664E89002E1C7D /* NumberedListTableViewController.swift */,
+				79C2465422CC40E10062EB1D /* UnsplashImageController.swift */,
 			);
 			path = "ios-challenge";
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79C2465522CC40E10062EB1D /* UnsplashImageController.swift in Sources */,
 				29162B0422652E1A00315E82 /* ViewController.swift in Sources */,
 				29162B0222652E1A00315E82 /* AppDelegate.swift in Sources */,
 				4E18BEDC22664E89002E1C7D /* NumberedListTableViewController.swift in Sources */,
